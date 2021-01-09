@@ -1,3 +1,12 @@
+## 使用/改动说明
+
+- kong模式是db-less模式，如果要用db模式请使用`values-db.yaml`替换`values.yaml`
+- 如果用db模式，默认是单master模式，集群模式有问题
+- 如果是在公有云上，使用LB来暴露kong proxy，请修改 `values.yaml`的 `proxy.type`字段，请改为 `LoadBalancer`
+- 如果在公有云上使用pg需要使用CSI来创建PV（DB模式），请修改`charts/postgresql/values.yaml`的 字段，  `storageClass: alicloud-disk-ssd`  , 具体什么值见云厂商的说明，这个值是在阿里云上使用SSD云盘的值。
+
+
+
 ## Kong for Kubernetes
 
 [Kong for Kubernetes](https://github.com/Kong/kubernetes-ingress-controller)
