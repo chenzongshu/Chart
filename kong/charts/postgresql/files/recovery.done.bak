@@ -1,0 +1,3 @@
+standby_mode = 'off'
+primary_conninfo = 'host=kong-postgresql port=5432 user=repl_user password=repl_password application_name=my_application'
+trigger_file = '/tmp/postgresql.trigger.5432'
